@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+
+svg.text {
+  display: block;
+  margin: 1em auto;
+  z-index: 2;
+}
+text {
+  fill: #778DA9;
+  font-size: 2em;
+}
+
+p {
+  color: #778DA9;
+  /*text-align: center;*/
+  margin: 2em 0;
+}
+
+.central{
+  text-align: center;
+}
+
+:root {
+	--color-background-1: #0D1B2A;
+	--color-background-2: #1B263B;
+	--color-background-3: #415A77;
+	--color-foreground-1: #eaeaea;
+	--color-foreground-2: #030303;
+	--color-link: #8199C5;
+  --color-link-2: #bdb2ff;
+	--border-radius-small: 12px;
+	--border-radius-medium: 25px;
+	--border-radius-large: 105px;
+	--spacing-half: 5px;
+	--spacing-1: 10px;
+	--spacing-2: 26px;
+	--spacing-3: 35px;
+	--spacing-4: 42px;
+	--spacing-5: 50px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body, html {
+	color: var(--color-foreground-1);
+	font-family: 'Baloo 2', sans-serif;
+	font-size: 20px;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+html{
+  background: var(--color-background-1);
+  z-index: -2;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  /*height: 100vh;*/
+  position: absolute;
+  z-index: -1;
+}
+
+#vid1{
+  right: 0;
+}
+
+h1 {
+	text-align: center;
+	font-size: calc(30px + 3vw);
+  font-family: Arial;
+}
+
+h2{
+  color: var(--color-link);
+}
+
+h3 {
+	margin: var(--spacing-half) 0;
+	font-size: 25px;
+  color: var(--color-link);
+}
+
+h4 {
+	font-size: 22px;
+  color:#918ef4;
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+}
+
+header p {
+    padding: 10px 0;
+}
+
+ul {
+	margin-left: var(--spacing-4);
+}
+
+a {
+	color: var(--color-link);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+header a, footer a{
+	color: var(--color-link-2);
+}
+
+.links {
+	line-break: anywhere;
+}
+
+header {
+	padding: 30px 50px;
+	padding-bottom: 60px; 
+	margin-bottom: var(--spacing-3);
+}
+
+.cc{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+main div:nth-child(odd) {
+	background-color: transparent;
+	color: var(--color-foreground-2);
+	width: 66%;
+	border: 3px dotted var(--color-background-2);
+	border-left: none;
+	border-top-right-radius: var(--border-radius-large);
+	border-bottom-right-radius: var(--border-radius-large);
+	padding: calc(var(--border-radius-large) / 2);
+	margin-top: var(--spacing-3);
+	margin-bottom: var(--spacing-3);
+	opacity: 0.3;
+	margin-left: -66%;
+	transition: margin-left 1s ease, opacity 2s ease;
+}
+
+main div:nth-child(even) {
+	text-align: right;
+	background-color: transparent;
+	color: var(--color-foreground-2);
+	width: 66%;
+	border: 3px dotted var(--color-background-2);
+	border-right: none;
+	border-top-left-radius: var(--border-radius-large);
+	border-bottom-left-radius: var(--border-radius-large);
+	padding: calc(var(--border-radius-large) / 2);      /*Space from text to side of box*/
+	opacity: 0.3;
+	margin-left: 134%;      /*determines direction of slide*/
+	margin-top: var(--spacing-3);
+	margin-bottom: var(--spacing-3);
+	transition: margin-left 1s ease, opacity 2s ease;
+}
+
+main div:nth-child(odd).show {
+	opacity: 1;
+	margin-left: 0;
+}
+
+main div:nth-child(even).show {
+	opacity: 1;
+	margin-left: 34%;
+}
+
+footer {
+	padding: calc(var(--border-radius-medium) / 2) 50px;
+	background-color: var(--color-background-2);
+	border-top-left-radius: var(--border-radius-medium);
+	border-top-right-radius: var(--border-radius-medium);
+	margin-top: var(--spacing-3);
+  background: linear-gradient(to right, #1b263b, #778da9);
+}
+
+img {
+	max-width: 100%;
+}
+img.center{
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media only screen and (max-width: 480px) {
+	img {height: auto; width: 100% !important; margin: 17px; margin-top: 20px !important; margin-bottom: 20px !important;}
+	h1 {font-size: calc(24px + 2vw);}
+	a {white-space: normal;}
+	header p {padding: 0;}
+	header {padding: 5px;}
+	footer {padding: 20px}
+	main > div {padding: var(--spacing-1);}
+}
+
+body::-webkit-scrollbar {
+	width: 5px;
+	background: inherit;
+}
+
+body::-webkit-scrollbar-track {
+	width: 5px;
+	background: #778DA9;
+}
+
+body::-webkit-scrollbar-thumb {
+	width: 5px;
+	background: #1B263B;
+}
+
+::selection {
+	background: rgb(165, 201, 191);
+}
